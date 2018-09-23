@@ -1,7 +1,7 @@
 # build artefacts
-plugin.sketchplugin/Contents/Sketch
-plugin.sketchplugin/Contents/Resources/_webpack_resources
-plugin.sketchplugin/Contents/Resources/webview.js
+sketch2trello-plugin.sketchplugin/Contents/Sketch
+sketch2trello-plugin.sketchplugin/Contents/Resources/_webpack_resources
+sketch2trello-plugin.sketchplugin/Contents/Resources/webview.js
 
 # npm
 node_modules
@@ -12,4 +12,3 @@ npm-debug.log
 .DS_Store
 
 src/secrets.js
-sketch2trello-plugin.sketchplugin
