@@ -6,7 +6,7 @@ A Plugin to export all you artboards to your Trello board.
 
 ## Installation
 
-- ([Download](https://github.com/kawamurakazushi/sketch2trello/releases/download/v0.1-beta/sketch2trello-plugin.sketchplugin.zip)) latest release, 0.1-beta
+- ([Download](https://github.com/kawamurakazushi/sketch2trello/releases/download/v0.1.1-beta/sketch2trello-plugin.sketchplugin.zip)) latest release, 0.1-beta
 - Unzip, if necessary, and double click `sketch2trello-plugin.sketchplugin`.
 
 ## Usage
