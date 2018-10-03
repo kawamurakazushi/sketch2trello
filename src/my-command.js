@@ -1,7 +1,7 @@
 import BrowserWindow from "sketch-module-web-view";
 
 import MochaJSDelegate from "./lib/MochaJSDelegate";
-import { setPreferences, getPreferences } from "./utils";
+import { setPreferences, getPreferences, removeKey } from "./utils";
 import { sync } from "./export";
 import { key } from "./secrets";
 import { TOKEN_KEY } from "./constants";
@@ -30,6 +30,10 @@ const loadExportView = (context, authToken) => {
     webContents.executeJavaScript(`fetchBoards("${authToken}")`);
   });
 
+  // TODO: remove
+  webContents.on("fetchBoards", s => {
+    webContents.executeJavaScript(`fetchBoards("${authToken}")`);
+  });
   // add a handler for a call from web content's javascript
   webContents.on("nativeLog", s => {
     UI.message(s);
@@ -40,6 +44,12 @@ const loadExportView = (context, authToken) => {
     log(listId);
     sync(context, key, authToken, listId);
     UI.message("Exporting.....");
+  });
+
+  webContents.on("logout", () => {
+    log("what");
+    removeKey(TOKEN_KEY);
+    UI.message("Logged out");
   });
 
   webContents.on("fetchLists", boardId => {
@@ -97,7 +107,6 @@ const loadTrelloAuthentication = () => {
 };
 
 export default function(context) {
-  log("fuck 13");
   const token = getPreferences(TOKEN_KEY);
   log(token);
   if (token) {

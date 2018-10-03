@@ -1,4 +1,4 @@
-const pluginIdentifier = 'com.kawamurakazushi.sketch2trello';
+const pluginIdentifier = "com.kawamurakazushi.sketch2trello";
 
 export const getPreferences = key => {
   const userDefaults = NSUserDefaults.standardUserDefaults();
@@ -19,7 +19,7 @@ export const setPreferences = (key, value) => {
     prefs = NSMutableDictionary.alloc().init();
   } else {
     prefs = NSMutableDictionary.dictionaryWithDictionary(
-      userDefaults.dictionaryForKey(pluginIdentifier),
+      userDefaults.dictionaryForKey(pluginIdentifier)
     );
   }
   prefs.setObject_forKey(value, key);
@@ -30,11 +30,12 @@ export const setPreferences = (key, value) => {
 export const removeKey = key => {
   const userDefaults = NSUserDefaults.standardUserDefaults();
 
+  let prefs;
   if (!userDefaults.dictionaryForKey(pluginIdentifier)) {
-    const prefs = NSMutableDictionary.alloc().init();
+    prefs = NSMutableDictionary.alloc().init();
   } else {
-    const prefs = NSMutableDictionary.dictionaryWithDictionary(
-      userDefaults.dictionaryForKey(pluginIdentifier),
+    prefs = NSMutableDictionary.dictionaryWithDictionary(
+      userDefaults.dictionaryForKey(pluginIdentifier)
     );
   }
   prefs.removeObjectForKey(key);
