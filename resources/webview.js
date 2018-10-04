@@ -16,13 +16,13 @@ document.querySelector("#boards").addEventListener("change", function(e) {
   pluginCall("fetchLists", boardId);
 });
 
-document.querySelector("#logout").addEventListener("click", function() {
-  pluginCall("logout");
-});
+// document.querySelector("#logout").addEventListener("click", function() {
+//   pluginCall("logout");
+// });
 
-document.querySelector("#fetch").addEventListener("click", function() {
-  pluginCall("fetchBoards");
-});
+// document.querySelector("#fetch").addEventListener("click", function() {
+//   pluginCall("fetchBoards");
+// });
 
 window.fetchLists = function(token, boardId) {
   const url = `https://api.trello.com/1/boards/${boardId}/lists?key=2cd8017d639182f6c0f0d330ce5d19ca&token=${token}`;
